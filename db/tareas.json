@@ -1,0 +1,18 @@
+[
+   {
+      "titulo": "Aprender Python",
+      "estado": "pendiente"
+   },
+   {
+      "titulo": "Aprender Javascript",
+      "estado": "en-proceso"
+   },
+   {
+      "titulo": "Aprender Git",
+      "estado": "terminado"
+   },
+   {
+      "titulo": "Terminar calculadora",
+      "estado": "pendiente"
+   }
+]
