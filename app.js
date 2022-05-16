@@ -60,6 +60,10 @@ const tareas = (accion) => {
     case "borrar":
       //Comando: borrar <numeroTarea>
       //ejemplo: borrar 1
+      
+      
+      
+
       if (numeroDeTareasEsValido(parametro2, data)) {
         borrar(parametro2);
       }
