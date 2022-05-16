@@ -18,5 +18,9 @@
    {
       "titulo": "Tarea para borrar",
       "estado": "pendiente"
+   },
+   {
+      "titulo": "Esta es otra tarea",
+      "estado": "pendiente"
    }
 ]
