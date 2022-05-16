@@ -1,7 +1,19 @@
 const process = require("process");
 
-const { esValido } = require("./helpers/validaciones");
-const { listar, crear, actualizar, borrar, ayuda } = require("./funcionesDeTareas");
+const data = require("./db/tareas.json");
+
+const {
+  esValido,
+  noEstaVacio,
+  numeroDeTareasEsValido,
+} = require("./helpers/validaciones");
+const {
+  listar,
+  crear,
+  actualizar,
+  borrar,
+  ayuda,
+} = require("./funcionesDeTareas");
 
 const comando = process.argv[2];
 const parametro2 = process.argv[3];
@@ -13,31 +25,51 @@ const tareas = (accion) => {
       //Comado: ayuda
       ayuda();
       break;
+
     case "crear":
-      //Comado: crear tarea
-      crear(parametro2);
+      //Comado: crear <tarea>
+      //ejemplo: crear Aprender NodeJS
+
+      let tarea = process.argv.splice(3, process.argv.length).join(" ");
+
+      if (noEstaVacio(tarea)) {
+        crear(tarea);
+      }
+
       break;
+
     case "listar":
       //Comando: listar
-      //Comando: listar estado
-      if (esValido(parametro2)) {
+      //Comando: listar <estado>
+      //ejemplo: listar pendiente
+      if (esValido(parametro2) || parametro2 === undefined) {
         listar(parametro2);
       }
 
       break;
+
     case "actualizar":
-      //Comando: actualizar numeroTarea estado
-      if (esValido(parametro3) && parametro2 <= data.length && parametro3 !== undefined) {
+      //Comando: actualizar <numeroTarea> <estado>
+      //ejemplo: actualizar 1 completado
+      if (numeroDeTareasEsValido(parametro2, data) && esValido(parametro3)) {
         actualizar(parametro2, parametro3);
       }
 
       break;
+
     case "borrar":
-      //Comando: borrar numeroTarea
-      borrar(parametro2);
+      //Comando: borrar <numeroTarea>
+      //ejemplo: borrar 1
+      if (numeroDeTareasEsValido(parametro2, data)) {
+        borrar(parametro2);
+      }
+
       break;
+
     default:
-      console.log("Error de comandos, para mas informacion ingrese la opcion: ayuda");
+      console.log(
+        "Error: ingrese un comando valido, para mas informacion ingrese la opcion: ayuda"
+      );
       break;
   }
 };

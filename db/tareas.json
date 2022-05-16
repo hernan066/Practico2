@@ -14,5 +14,9 @@
    {
       "titulo": "Terminar calculadora",
       "estado": "pendiente"
+   },
+   {
+      "titulo": "Esta es una nueva tarea",
+      "estado": "pendiente"
    }
 ]

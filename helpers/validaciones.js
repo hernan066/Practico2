@@ -1,4 +1,5 @@
-const estados = ["pendiente", "completado", "en-proceso", undefined];
+const estados = ["pendiente", "completado", "en-proceso"];
+
 
 
 const esValido = (estadoIngresado) => {
@@ -12,6 +13,33 @@ const esValido = (estadoIngresado) => {
     }
   };
 
+  const noEstaVacio = (tarea= "") => {
+    if (tarea === "") {
+      console.log(
+        "Error: ingrese una tarea"
+      );
+      return false;
+    }else{
+        return true;
+    }
+  }
+
+  const numeroDeTareasEsValido =(numeroDeTarea, tareas) => {
+    if (numeroDeTarea > tareas.length ) {
+      console.log(
+        "Error: el numero de tarea ingresado no existe"
+      );
+      return false;
+    }else{
+        return true;
+    }
+  }
+
+  
+
   module.exports = {
     esValido,
+    noEstaVacio,
+    numeroDeTareasEsValido,
+    
   }
