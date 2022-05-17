@@ -1,4 +1,4 @@
-const estados = ["pendiente", "completado", "en-proceso"];
+const estados = ["pendiente", "completado", "en-progreso"];
 
 const esValidoElEstado = (estadoIngresado) => {
   if (!estados.includes(estadoIngresado)) {

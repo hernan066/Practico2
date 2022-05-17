@@ -5,19 +5,15 @@
    },
    {
       "titulo": "Aprender Javascript",
-      "estado": "en-proceso"
+      "estado": "en-progreso"
    },
    {
       "titulo": "Aprender Git",
-      "estado": "terminado"
+      "estado": "completado"
    },
    {
       "titulo": "Terminar calculadora",
-      "estado": "pendiente"
-   },
-   {
-      "titulo": "Tarea para borrar",
-      "estado": "pendiente"
+      "estado": "completado"
    },
    {
       "titulo": "Esta es otra tarea",
